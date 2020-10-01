@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <script src="css-doodle.js" charset="utf-8"></script> -->
+    <script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+  </head>
+  <body>
+    <style>
+    css-doodle{
+
+    }
+    </style>
+    <css-doodle>
+      :doodle{
+        @grid : 7 /20em;
+        grid-gap:1px;
+        position: relative;
+        //border : 1px solid black;
+      }
+      box-shadow : 2px 2px 5px lightblue;
+      border-radius : 50%;
+      position : relative;
+      left : calc((1 - @col) * .8em);
+      top : calc((1 - @row) * .9em);
+      background-image:linear-gradient(10deg,blue,white);
+      :after{
+        //content : @col;
+      }
+    </css-doodle>
+
+
+
+
+
+  </body>
+</html>
