@@ -8,27 +8,50 @@
   </head>
   <body>
     <style>
-    css-doodle{
-
+    .body{
+      position:  relative;
+    }
+    .css-doodle-1{
+      position: absolute;
+      top : 20%;
+      left : 10%;
     }
     </style>
-    <css-doodle>
-      :doodle{
-        @grid : 7 /20em;
-        grid-gap:1px;
-        position: relative;
-        //border : 1px solid black;
-      }
-      box-shadow : 2px 2px 5px lightblue;
-      border-radius : 50%;
-      position : relative;
-      left : calc((1 - @col) * .8em);
-      top : calc((1 - @row) * .9em);
-      background-image:linear-gradient(10deg,blue,white);
-      :after{
-        //content : @col;
-      }
-    </css-doodle>
+    <div class="css-doodle-1">
+      <css-doodle >
+        :doodle{
+          @grid : 32 /60em;
+          grid-gap:1px;
+          position: relative;
+          //border : 1px solid black;
+
+        }
+        @palce-cell:center;
+        box-shadow : 2px 2px 5px lightblue;
+        //border : .01em solid black;
+        border-radius : 50%;
+        position : relative;
+        left : calc((1 - @col) * .8em);
+        top : calc((1 - @row) * .9em);
+        background-image:linear-gradient(20deg,black,transparent);
+        :after{
+          //content : @i;
+        }
+        animation : floating_cloth 18s ease-in-out calc( calc( @size-row + @size-col - @row - @col ) * 1s ) infinite;
+        @keyframes floating_cloth {
+          0%{
+            transform:scale(1);
+          }
+          50%{
+            transform:scale(3.4);
+          }
+          100%{
+            transform:scale(1);
+          }
+
+        }
+      </css-doodle>
+    </div>
 
 
 
